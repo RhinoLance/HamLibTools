@@ -1,0 +1,51 @@
+[
+	{"command": "V VFOB", 		"expect": "RPRT 0"},
+	{"command": "v", 			"expect": "VFOB"},
+	{"command": "V VFOA", 		"expect": "RPRT 0"},
+
+	{"command": "F 444000000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "444000000"},
+	{"command": "i", 			"expect": "444000000"},
+	{"command": "I 440000000", 	"expect": "RPRT 0"},
+	{"command": "i", 			"expect": "440000000"},
+	{"command": "f", 			"expect": "440000000"},
+
+	{"command": "V VFOB", 		"expect": "RPRT 0"},
+	{"command": "F 146555000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "146555000"},
+	{"command": "i", 			"expect": "146555000"},
+	{"command": "I 146500000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "146500000"},
+	{"command": "i", 			"expect": "146500000"},
+
+	{"command": "M AM 4000",	"expect": "RPRT 0"},
+	{"command": "m", 			"expect": "AM 4000"},
+	{"command": "M WFM 15000",	"expect": "RPRT 0"},
+	{"command": "m", 			"expect": "WFM 15000"},
+	{"command": "M FM 5000",	"expect": "RPRT 0"},
+	{"command": "m", 			"expect": "FM 5000"},
+
+	{"command": "V VFOA", 		"expect": "RPRT 0"},
+	{"command": "S 1 VFOB",		"expect": "RPRT 0"},
+	{"command": "F 444000000", 	"expect": "RPRT 0"},
+	{"command": "I 146500000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "444000000"},
+	{"command": "i", 			"expect": "146500000"},
+	{"command": "V VFOA", 		"expect": "RPRT 0"},
+	{"command": "F 440000000", 	"expect": "RPRT 0"},
+	{"command": "I 146555000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "440000000"},
+	{"command": "i", 			"expect": "146555000"},
+	
+	{"command": "S 1 VFOA",		"expect": "RPRT 0"},
+	{"command": "F 444000000", 	"expect": "RPRT 0"},
+	{"command": "I 146500000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "444000000"},
+	{"command": "i", 			"expect": "146500000"},
+	{"command": "V VFOB", 		"expect": "RPRT 0"},
+	{"command": "F 440000000", 	"expect": "RPRT 0"},
+	{"command": "I 146555000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "440000000"},
+	{"command": "i", 			"expect": "146555000"}
+
+]
