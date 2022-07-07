@@ -1,0 +1,10 @@
+[
+	{"comment": "Tone functions"},
+	{"command": "C 825",		"expect": "RPRT 0"},
+	{"command": "c",			"expect": "825"},
+	{"command": "0x90 719",		"expect": "RPRT 0"},
+	{"command": "0x91",			"expect": "719"},
+	{"command": "0x92 25",		"expect": "RPRT 0"},
+	{"command": "0x93",			"expect": "25"},
+	{"command": "C 0",			"expect": "RPRT 0"}
+]

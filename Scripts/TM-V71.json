@@ -1,8 +1,12 @@
 [
+	{"comment": "Control Switching"},
+	{"comment": "VFO Switching"},
 	{"command": "V VFOB", 		"expect": "RPRT 0"},
 	{"command": "v", 			"expect": "VFOB"},
 	{"command": "V VFOA", 		"expect": "RPRT 0"},
-
+	
+	{"comment": "Non-Split functions"},
+	{"command": "S 0 VFOA",		"expect": "RPRT 0"},
 	{"command": "F 444000000", 	"expect": "RPRT 0"},
 	{"command": "f", 			"expect": "444000000"},
 	{"command": "i", 			"expect": "444000000"},
@@ -17,14 +21,7 @@
 	{"command": "I 146500000", 	"expect": "RPRT 0"},
 	{"command": "f", 			"expect": "146500000"},
 	{"command": "i", 			"expect": "146500000"},
-
-	{"command": "M AM 4000",	"expect": "RPRT 0"},
-	{"command": "m", 			"expect": "AM 4000"},
-	{"command": "M WFM 15000",	"expect": "RPRT 0"},
-	{"command": "m", 			"expect": "WFM 15000"},
-	{"command": "M FM 5000",	"expect": "RPRT 0"},
-	{"command": "m", 			"expect": "FM 5000"},
-
+	{"comment": "Split functions"},
 	{"command": "V VFOA", 		"expect": "RPRT 0"},
 	{"command": "S 1 VFOB",		"expect": "RPRT 0"},
 	{"command": "F 444000000", 	"expect": "RPRT 0"},
@@ -46,6 +43,64 @@
 	{"command": "F 440000000", 	"expect": "RPRT 0"},
 	{"command": "I 146555000", 	"expect": "RPRT 0"},
 	{"command": "f", 			"expect": "440000000"},
-	{"command": "i", 			"expect": "146555000"}
+	{"command": "i", 			"expect": "146555000"},
+
+	{"comment": "Back to non-split, should not have any split related hangovers."},
+	{"command": "S 0 VFOA",		"expect": "RPRT 0"},
+	{"command": "F 444000000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "444000000"},
+	{"command": "i", 			"expect": "444000000"},
+	{"command": "I 440000000", 	"expect": "RPRT 0"},
+	{"command": "i", 			"expect": "440000000"},
+	{"command": "f", 			"expect": "440000000"},
+
+	{"command": "V VFOB", 		"expect": "RPRT 0"},
+	{"command": "F 146555000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "146555000"},
+	{"command": "i", 			"expect": "146555000"},
+	{"command": "I 146500000", 	"expect": "RPRT 0"},
+	{"command": "f", 			"expect": "146500000"},
+	{"command": "i", 			"expect": "146500000"},
+
+	{"comment": "Mode functions"},
+	{"command": "M AM 4000",	"expect": "RPRT 0"},
+	{"command": "m", 			"expect": "AM 4000"},
+	{"command": "M WFM 15000",	"expect": "RPRT 0"},
+	{"command": "m", 			"expect": "WFM 15000"},
+	{"command": "M FM 5000",	"expect": "RPRT 0"},
+	{"command": "m", 			"expect": "FM 5000"},
+
+	{"comment": "Tone functions"},
+	{"command": "C 825",		"expect": "RPRT 0"},
+	{"command": "c",			"expect": "825"},
+	{"command": "0x90 719",		"expect": "RPRT 0"},
+	{"command": "0x91",			"expect": "719"},
+	{"command": "0x92 25",		"expect": "RPRT 0"},
+	{"command": "0x93",			"expect": "25"},
+
+	{"comment": "Get Squelch status"},
+	{"command": "0x8b",		"expect": "0"},
+
+	{"comment": "Power levels"},
+	{"command": "L RFPOWER 1",		"expect": "RPRT 0"},
+	{"command": "l RFPOWER",		"expect": "1.000000"},
+	{"command": "L RFPOWER 0.5",	"expect": "RPRT 0"},
+	{"command": "l RFPOWER",		"expect": "0.500000"},
+	{"command": "L RFPOWER 0.1",	"expect": "RPRT 0"},
+	{"command": "l RFPOWER",		"expect": "0.100000"},
+	{"command": "L RFPOWER 0",		"expect": "RPRT 0"},
+	{"command": "l RFPOWER",		"expect": "0.100000"},
+
+	{"comment": "PTT"},
+	{"command": "L RFPOWER 0",		"expect": "RPRT 0"},
+	{"command": "F 444000000", 	"expect": "RPRT 0"},
+	{"command": "T 1",		"expect": "RPRT 0"},
+	{"command": "t",		"expect": "1"},
+	{"command": "T 0",		"expect": "RPRT 0"},
+	{"command": "t",		"expect": "0"},
+
+	{"comment": "Put the radio back into it's rest state"},
+	{"command": "L RFPOWER 1",		"expect": "RPRT 0"},
+	{"command": "F 146500000", 	"expect": "RPRT 0"}
 
 ]

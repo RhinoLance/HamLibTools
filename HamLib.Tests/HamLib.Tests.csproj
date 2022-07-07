@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HamLib.Testing\HamLib.Testing.csproj" />
+    <ProjectReference Include="..\HamLib.TestRunner\HamLib.TestRunner.csproj" />
   </ItemGroup>
 
 </Project>
